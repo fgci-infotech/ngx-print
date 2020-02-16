@@ -32,7 +32,7 @@ export class NgxPrintDirective {
    *
    * @memberof NgxPrintDirective
    */
-  @Input() printDelay: number = 0;
+  @Input() printDelay: number = 800;
 
   /**
    *
@@ -141,7 +141,6 @@ public returnStyleValues() {
               window.removeEventListener('load', triggerPrint, false);
               setTimeout(() => {
                 window.print();
-                setTimeout(() => window.close(), 0);
               }, ${this.printDelay});
             }
             window.addEventListener('load', triggerPrint, false);
